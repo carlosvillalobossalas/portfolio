@@ -1,0 +1,151 @@
+---
+import CertificationItem from "./CertificationItem.astro";
+import Udemy from "../icons/Udemy.astro";
+import React from "../icons/React.astro";
+import OpenAI from "../icons/OpenAI.astro";
+import NestJS from "../icons/NestJS.astro";
+import Docker from "../icons/Docker.astro";
+import Github from "../icons/Github.astro";
+import Flutter from "../icons/Flutter.astro";
+import Storybook from "../icons/Storybook.astro";
+import MongoDB from "../icons/MongoDB.astro";
+import Node from "../icons/Node.astro";
+import Redux from "../icons/Redux.astro";
+import Express from "../icons/Express.astro";
+import Jest from "../icons/Jest.astro";
+
+const TAGS = {
+  UDEMY: {
+    name: "Udemy",
+    class: "bg-black text-white",
+    icon: Udemy,
+  },
+  REACT: {
+    name: "React",
+    class: "bg-black text-white",
+    icon: React,
+  },
+  OPENAI: {
+    name: "OpenAI",
+    class: "bg-black text-white",
+    icon: OpenAI,
+  },
+  NEST: {
+    name: "NestJS",
+    class: "bg-black text-white",
+    icon: NestJS,
+  },
+  DOCKER: {
+    name: "Docker",
+    class: "bg-black text-white",
+    icon: Docker,
+  },
+  GITHUB: {
+    name: "Github",
+    class: "bg-black text-white",
+    icon: Github,
+  },
+  FLUTTER: {
+    name: "Flutter",
+    class: "bg-black text-white",
+    icon: Flutter,
+  },
+  STORYBOOK: {
+    name: "Storybook",
+    class: "bg-black text-white",
+    icon: Storybook,
+  },
+  MONGODB: {
+    name: "MongoDB",
+    class: "bg-black text-white",
+    icon: MongoDB,
+  },
+  NODE: {
+    name: "Node",
+    class: "bg-black text-white",
+    icon: Node,
+  },
+  REDUX: {
+    name: "Redux",
+    class: "bg-black text-white",
+    icon: Redux,
+  },
+  EXPRESS: {
+    name: "Express",
+    class: "bg-black text-white",
+    icon: Express,
+  },
+  JEST: {
+    name: "Jest",
+    class: "bg-black text-white",
+    icon: Jest,
+  },
+};
+const CERTIFICATIONS = [
+  {
+    title: "OpenAI: Ejercicios prácticos y asistentes con React + NestJS",
+    website: TAGS.UDEMY,
+    description: `Creación de un servidor con NestJS que consume la librería de OpenAI y este se consume desde un sitio web creado con React.
+       Entre las funcionalidades de la aplicación está la generación y edición de imágenes, generación de audio basado en texto, texto a audio, configurar un asistente y más.`,
+    credential: "https://cursos.devtalles.com/certificates/kwce0bxy35",
+    tags: [TAGS.REACT, TAGS.OPENAI, TAGS.NEST],
+  },
+  {
+    title: "Docker - Guía práctica de uso para desarrolladores",
+    website: TAGS.UDEMY,
+    description: `Se adquieren conocimientos para utilizar, crear y configurar imágenes en diferentes arquitecturas y desplegarlas en registros en la nube.`,
+    credential:
+      "https://www.udemy.com/certificate/UC-b5731608-9037-4324-9a5a-b11927af1e0b/",
+    tags: [TAGS.DOCKER, TAGS.GITHUB],
+  },
+  {
+    title: "Flutter - Móvil: De cero a experto - Edición 2023",
+    website: TAGS.UDEMY,
+    description: `Brinda la oportunidad de poder desarrollar cualquier tipo de aplicación por cuenta propia.`,
+    credential:
+      "https://www.udemy.com/certificate/UC-47585ce9-a70d-4f99-add4-ddde1595c217/",
+    tags: [TAGS.FLUTTER],
+  },
+  {
+    title: "React PRO: Lleva tus bases al siguiente nivel",
+    website: TAGS.UDEMY,
+    description: `El objetivo del curso es mejorar las habilidades existentes de React`,
+    credential:
+      "https://www.udemy.com/certificate/UC-0c46a427-ab48-453b-a07d-0906bc65021d/",
+    tags: [TAGS.REACT, TAGS.STORYBOOK],
+  },
+  {
+    title: "React: Aplicaciones en tiempo real con Socket-io",
+    website: TAGS.UDEMY,
+    description: `Aprender a crear aplicaciones que interactúen entre si de manera simultánea e instantánea`,
+    credential:
+      "https://www.udemy.com/certificate/UC-7a1b797b-d12c-4efa-9cf1-45624ea5d397/",
+    tags: [TAGS.REACT, TAGS.MONGODB],
+  },
+  {
+    title: "React: De cero a expero (Hooks y MERN)",
+    website: TAGS.UDEMY,
+    description: `Se adquieren desde cero muchos conocimientos sobre React, incluyendo pruebas unitarias y de integración.`,
+    credential:
+      "https://www.udemy.com/certificate/UC-7b2da51a-57be-4778-84b9-3dd812532479/?utm_campaign=email&utm_source=sendgrid.com&utm_medium=email",
+    tags: [
+      TAGS.REACT,
+      TAGS.REDUX,
+      TAGS.NODE,
+      TAGS.EXPRESS,
+      TAGS.MONGODB,
+      TAGS.JEST,
+    ],
+  },
+];
+---
+
+<ol class="relative mt-16">
+  {
+    CERTIFICATIONS.map((cert) => (
+      <li class="border-b border-white border-opacity-30 py-4">
+        <CertificationItem {...cert} />
+      </li>
+    ))
+  }
+</ol>

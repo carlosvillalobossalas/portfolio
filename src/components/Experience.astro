@@ -1,0 +1,84 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+import React from "../icons/React.astro";
+import Node from "../icons/Node.astro";
+import Express from "../icons/Express.astro";
+import Java from "../icons/Java.astro";
+import Spring from "../icons/Spring.astro";
+import PostgreSQL from "../icons/PostgreSQL.astro";
+import MySQL from "../icons/MySQL.astro";
+
+const TAGS = {
+  REACT: {
+    name: "React",
+    class: "bg-black text-white",
+    icon: React,
+  },
+  NODE: {
+    name: "Node",
+    class: "bg-black text-white",
+    icon: Node,
+  },
+  EXPRESS: {
+    name: "Express",
+    class: "bg-black text-white",
+    icon: Express,
+  },
+  JAVA: {
+    name: "Java",
+    class: "bg-gray-100 text-black",
+    icon: Java,
+  },
+  SPRING: {
+    name: "Spring",
+    class: "bg-black text-white",
+    icon: Spring,
+  },
+  POSTGRESQL: {
+    name: "PostgreSQL",
+    class: "bg-black text-white",
+    icon: PostgreSQL,
+  },
+  MYSQL: {
+    name: "MySQL",
+    class: "bg-white text-black",
+    icon: MySQL,
+  },
+};
+const EXPERIENCIE = [
+  {
+    date: "11/2022 - 02/2024",
+    title: "Full Stack Developer",
+    company: "Fresh Consulting",
+    description:
+      "Encargado de resolver tickets en Jira para solucionar errores y agregar o eliminar funcionalidades en las diferentes plataformas del cliente.",
+    tags: [TAGS.REACT, TAGS.NODE, TAGS.EXPRESS, TAGS.POSTGRESQL],
+  },
+  {
+    date: "02/2022 - 10/2022",
+    title: "Full Stack Developer",
+    company: "First Factory",
+    description:
+      "Responsable de cumplir con la entrega de tickets para mejorar y expandir el funcionamiento de las diferentes aplicaciones web del cliente.",
+    tags: [TAGS.REACT, TAGS.JAVA, TAGS.SPRING, TAGS.POSTGRESQL],
+  },
+  {
+    date: "07/2021 - 02/2022",
+    title: "Full Stack Developer",
+    company: "SOIN",
+    description:
+      "Creación de un sistema web completo para el departamento de QA. Se incluyeron funcionalidades como creación de reportes diarios, ejecución de métricas, administración de usuarios y encuestas",
+    tags: [TAGS.REACT, TAGS.NODE, TAGS.EXPRESS, TAGS.MYSQL],
+  },
+];
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>

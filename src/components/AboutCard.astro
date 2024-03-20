@@ -1,0 +1,33 @@
+---
+import LinkedInIcon from "../icons/LinkedIn.astro";
+import GithubIcon from "../icons/Github.astro";
+import SocialPill from "./SocialPill.astro";
+import avatar from "../images/avatar.jpg";
+---
+
+<div
+  class="bg-gray-200 flex-grow-0 w-2/6 mr-10 rounded-xl p-4 flex-col items-center flex dark:text-black"
+>
+  <img
+    src={avatar.src}
+    alt={"Mi avatar"}
+    class={`w-48 h-48 rounded-full object-cover mt-10`}
+  />
+  <h1 class="text-4xl font-semibold pt-5">Carlos Villalobos</h1>
+  <h2 class="text-2xl font-semibold">Software Developer</h2>
+  <p class="text-left text-xl px-1 pt-5">
+    Et Lorem dolor cillum culpa ex voluptate excepteur mollit. Id in occaecat
+    ipsum veniam culpa dolore. Id cupidatat dolore qui do duis consectetur amet.
+    Ullamco adipisicing ad consequat laborum dolore laborum.
+  </p>
+  <nav class="flex gap-x-5 mt-5">
+    <SocialPill href="https://www.linkedin.com/in/carlos-villalobos-salas/">
+      <LinkedInIcon class="w-6 h-6" />
+      LinkedIn
+    </SocialPill>
+    <SocialPill href="https://github.com/carlosvillalobossalas">
+      <GithubIcon class="w-6 h-6" />
+      Github
+    </SocialPill>
+  </nav>
+</div>
