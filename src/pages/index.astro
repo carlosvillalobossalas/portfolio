@@ -19,7 +19,7 @@ import Certifications from "../components/Certifications.astro";
     <title>Carlos Villalobos</title>
   </head>
   <body
-    class="flex flex-col justify-center items-center pb-5 relative text-black dark:text-white"
+    class="flex-col justify-center items-center pb-5 relative text-black dark:text-white"
     style="font-family: Onest Variable;"
   >
     <div
@@ -29,7 +29,7 @@ import Certifications from "../components/Certifications.astro";
     >
     </div>
     <section
-      class="section md:py-8 xl:py-16 sm:max-w-8xl scroll-m-20 sm:w-full mx-auto sm:h-screen flex flex-col"
+      class="section py-8 md:py-8 xl:py-16 sm:max-w-8xl scroll-m-20 sm:w-full mx-auto sm:h-screen flex flex-col"
     >
       <div
         class="flex-grow sm:h-3/5 sm:flex-row flex flex-col sm:justify-between py-5 px-5 xl:px-20"
@@ -46,7 +46,6 @@ import Certifications from "../components/Certifications.astro";
       <div
         class="flex-grow sm:h-2/5 flex flex-col sm:flex-row py-5 px-5 xl:px-20 sm:justify-between"
       >
-        <!-- Contenido del segundo div (1/3 del alto restante) -->
         <a
           href="/#proyectos"
           class="w-full sm:max-w-2xl sm:mr-10 rounded-xl cursor-pointer hover:scale-105 transition"
@@ -61,11 +60,10 @@ import Certifications from "../components/Certifications.astro";
         </a>
       </div>
     </section>
-    <div class="sm:space-y-24">
+    <div class="space-y-24 w-full">
       <SectionContainer id="experiencia">
-        <p class="text-black">a</p>
         <h2
-          class="flex items-center mb-6 sm:text-3xl font-semibold sm:gap-x-3 text-black/80 dark:text-white"
+          class="pl-4 sm:pl-0 flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
         >
           <BriefcaseIcon class="size-8" />
           Experiencia laboral
@@ -74,7 +72,7 @@ import Certifications from "../components/Certifications.astro";
       </SectionContainer>
       <SectionContainer id="proyectos">
         <h2
-          class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+          class="pl-4 sm:pl-0 flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
         >
           <CodeIcon class="size-8" />
           Proyectos
@@ -83,7 +81,7 @@ import Certifications from "../components/Certifications.astro";
       </SectionContainer>
       <SectionContainer id="certificaciones">
         <h2
-          class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+          class="pl-4 sm:pl-0 flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
         >
           <BriefcaseIcon class="size-8" />
           Certificaciones
