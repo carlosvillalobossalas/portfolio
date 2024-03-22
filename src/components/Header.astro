@@ -3,7 +3,7 @@ const navItems = [
   {
     title: "Inicio",
     label: "inicio",
-    url: "/",
+    url: "/#home",
   },
   {
     title: "Experiencia",
@@ -84,19 +84,25 @@ const navItems = [
   header {
     backdrop-filter: blur(5px);
     position: sticky;
-    top: 5px;
+    top: 0px;
     animation: adjust-header linear both;
     animation-timeline: scroll();
     animation-range: 0 100px;
+    border-radius: 0;
     z-index: 0;
   }
-
+  nav {
+    animation: nav-shadown 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
   @keyframes adjust-header {
     to {
       background: rgba(179, 177, 210, 0.5);
       /* font-size: 12px; */
       height: 40px;
       z-index: 99;
+      top: 10px;
       border-radius: 20px;
     }
   }
