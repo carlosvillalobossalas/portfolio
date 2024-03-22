@@ -29,7 +29,7 @@ const navItems = [
     {
       navItems.map((item) => (
         <a
-          class="relative block transition hover:text-[#7e3636] dark:hover:text-yellow-400"
+          class="relative block transition hover:text-[#7e3636] dark:hover:text-yellow-400 text-sm"
           href={item.url}
           aria-label={item.label}
         >
@@ -105,7 +105,7 @@ const navItems = [
   @keyframes adjust-header {
     to {
       background: rgba(179, 177, 210, 0.5);
-      /* font-size: 12px; */
+      font-size: 12px;
       height: 40px;
       z-index: 99;
       top: 10px;
