@@ -1,0 +1,103 @@
+---
+const navItems = [
+  {
+    title: "Inicio",
+    label: "inicio",
+    url: "/",
+  },
+  {
+    title: "Experiencia",
+    label: "experiencia",
+    url: "/#experiencia",
+  },
+  {
+    title: "Proyectos",
+    label: "proyectos",
+    url: "/#proyectos",
+  },
+  {
+    title: "Certificaciones",
+    label: "certificaciones",
+    url: "/#certificaciones",
+  },
+];
+---
+
+<header class="sm:max-w-8xl flex items-center justify-center p-3">
+  <nav class="flex flex-row gap-x-3">
+    {
+      navItems.map((item) => (
+        <a
+          class="relative block transition hover:text-yellow-500 dark:hover:text-yellow-400"
+          href={item.url}
+          aria-label={item.label}
+        >
+          {item.title}
+        </a>
+      ))
+    }
+  </nav>
+</header>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const sections = document.querySelectorAll("section");
+    const navItems = document.querySelectorAll("header nav a");
+    const callback = (entries: any[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navItems.forEach((item) => {
+            if (item.getAttribute("aria-label") == entry.target.id) {
+              item.classList.add("text-yellow-500");
+            } else {
+              item.classList.remove("text-yellow-500");
+            }
+          });
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(callback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.3,
+    });
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    // Cleanup function
+    document.onvisibilitychange = () => {
+      if (document.visibilityState === "hidden") {
+        observer.disconnect();
+      } else {
+        sections.forEach((section) => {
+          observer.observe(section);
+        });
+      }
+    };
+  });
+</script>
+
+<style>
+  header {
+    backdrop-filter: blur(5px);
+    position: sticky;
+    top: 5px;
+    animation: adjust-header linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+    z-index: 0;
+  }
+
+  @keyframes adjust-header {
+    to {
+      background: rgba(179, 177, 210, 0.5);
+      /* font-size: 12px; */
+      height: 40px;
+      z-index: 99;
+      border-radius: 20px;
+    }
+  }
+</style>

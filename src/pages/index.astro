@@ -8,6 +8,8 @@ import SectionContainer from "../components/SectionContainer.astro";
 import Experience from "../components/Experience.astro";
 import Projects from "../components/Projects.astro";
 import Certifications from "../components/Certifications.astro";
+import Header from "../components/Header.astro";
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <html lang="en">
@@ -17,49 +19,23 @@ import Certifications from "../components/Certifications.astro";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Carlos Villalobos</title>
+    <ViewTransitions />
   </head>
+
   <body
-    class="flex-col justify-center items-center pb-5 relative text-black dark:text-white"
+    class="flex-col justify-center items-center flex pb-5 relative text-black dark:text-white"
     style="font-family: Onest Variable;"
   >
+    <Header />
     <div
       class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950
-  bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
-  dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+      bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
+      dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
     >
     </div>
-    <section
-      class="section py-8 md:py-8 xl:py-16 sm:max-w-8xl scroll-m-20 w-full mx-auto sm:h-screen flex flex-col"
-    >
-      <div
-        class="flex-grow sm:h-3/5 sm:flex-row flex flex-col sm:justify-between py-5 px-5 xl:px-20"
-      >
-        <AboutCard />
-        <a
-          href="/#experiencia"
-          class="flex-grow-0 mt-5 sm:mt-0 sm:w-4/6 cursor-pointer hover:scale-105 transition"
-        >
-          <img class="w-full h-full rounded-xl" src="/exp2.webp" alt="" />
-        </a>
-      </div>
-
-      <div
-        class="flex-grow sm:h-2/5 flex flex-col sm:flex-row py-5 px-5 xl:px-20 sm:justify-between"
-      >
-        <a
-          href="/#proyectos"
-          class="w-full sm:max-w-2xl sm:mr-10 rounded-xl cursor-pointer hover:scale-105 transition"
-        >
-          <img class="w-full h-full rounded-xl" src="/projects.webp" alt="" />
-        </a>
-        <a
-          href="/#certificaciones"
-          class="w-full mt-5 sm:mt-0 sm:max-w-2xl rounded-xl cursor-pointer hover:scale-105 transition"
-        >
-          <img class="w-full h-full rounded-xl" src="/cert.webp" alt="" />
-        </a>
-      </div>
-    </section>
+    <SectionContainer class="py-16 md:py-36 flex justify-center items-center">
+      <AboutCard />
+    </SectionContainer>
     <div class="space-y-24 w-full">
       <SectionContainer id="experiencia">
         <h2
@@ -89,11 +65,14 @@ import Certifications from "../components/Certifications.astro";
         <Certifications />
       </SectionContainer>
     </div>
+    <style is:global>
+      :root {
+        color-scheme: light dark;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
   </body>
 </html>
-
-<style is:global>
-  :root {
-    color-scheme: light dark;
-  }
-</style>

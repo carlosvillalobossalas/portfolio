@@ -5,21 +5,19 @@ import SocialPill from "./SocialPill.astro";
 import avatar from "../images/avatar.jpg";
 ---
 
-<div
-  class="bg-gray-200 flex-grow-0 sm:w-2/6 sm:mr-10 rounded-xl p-4 sm:p-2 xl:p-2 flex-col items-center flex dark:text-black overflow-auto"
->
+<div class=" flex flex-col items-center max-w-3xl">
   <img
     src={avatar.src}
     alt={"Mi avatar"}
-    class={`w-32 h-32 xl:w-36 xl:h-36 rounded-full object-cover mt-2`}
+    class={` w-36 h-36 sm:w-48 sm:h-48 rounded-lg object-cover mt-2`}
   />
-  <h1 class="text-3xl font-semibold pt-2 xl:pt-5">Carlos Villalobos</h1>
+  <h1 class="text-3xl font-semibold mt-2 sm:mt-5">Carlos Villalobos</h1>
   <h2 class="text-xl font-semibold">Software Developer</h2>
-  <p class="text-left text-lg px-1 pt-2 xl:pt-5">
+  <p class="w-4/5 text-left text-lg pt-2 xl:pt-5 text-pretty ">
     Et Lorem dolor cillum culpa ex voluptate excepteur mollit. Id in occaecat
     ipsum veniam culpa dolore. Id cupidatat dolore qui do duis consectetur amet.
   </p>
-  <nav class="flex gap-x-5 mt-3">
+  <nav class="flex gap-x-5 my-5">
     <SocialPill href="https://www.linkedin.com/in/carlos-villalobos-salas/">
       <LinkedInIcon class="w-6 h-6" />
       LinkedIn
@@ -29,4 +27,11 @@ import avatar from "../images/avatar.jpg";
       Github
     </SocialPill>
   </nav>
+  
 </div>
+
+<style>
+  img {
+    mask-image: linear-gradient(black 95%, transparent);
+  }
+</style>
