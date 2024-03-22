@@ -1,4 +1,5 @@
 ---
+import ThemeToggle from './ThemeToggle.astro'
 const navItems = [
   {
     title: "Inicio",
@@ -28,7 +29,7 @@ const navItems = [
     {
       navItems.map((item) => (
         <a
-          class="relative block transition hover:text-yellow-500 dark:hover:text-yellow-400"
+          class="relative block transition hover:text-[#841818] dark:hover:text-yellow-400"
           href={item.url}
           aria-label={item.label}
         >
@@ -36,6 +37,7 @@ const navItems = [
         </a>
       ))
     }
+    <ThemeToggle/>
   </nav>
 </header>
 
@@ -48,9 +50,13 @@ const navItems = [
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
             if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-yellow-500");
+              item.classList.add("dark:text-yellow-500");
+              item.classList.add("text-[#841818]");
+
             } else {
-              item.classList.remove("text-yellow-500");
+              item.classList.remove("dark:text-yellow-500");
+              item.classList.remove("text-[#841818]");
+
             }
           });
         }

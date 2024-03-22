@@ -1,0 +1,72 @@
+---
+import Sun from "../icons/Sun.astro";
+import Moon from "../icons/Moon.astro";
+---
+
+<div class="relative ml-1 mr-1">
+  <button
+    id="theme-toggle-btn"
+    class="appearance-none border-none flex hover:scale-125 transition"
+  >
+    <span class="sr-only">Elige el tema</span>
+    <Sun
+      id="dark"
+      class="hidden dark:inline-block theme-toggle-icon size-5 transition-all"
+    />
+    <Moon
+      id="light"
+      class="dark:hidden theme-toggle-icon size-5 transition-all"
+    />
+  </button>
+</div>
+
+<script is:inline>
+  let remove = null;
+  const matchMedia = window.matchMedia("(prefers-color-scheme: dark)");
+
+  const getThemePreference = () => {
+    if (typeof localStorage !== "undefined") {
+      return localStorage.getItem("theme") ?? "dark";
+    }
+
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  };
+
+  const updateIcon = (themePreference) => {
+    document.querySelectorAll(".theme-toggle-icon").forEach((element) => {
+      element.style.scale = element.id === themePreference ? "1" : "0";
+    });
+  };
+
+  const updateTheme = () => {
+    if (remove != null) {
+      remove();
+    }
+    matchMedia.addEventListener("change", updateTheme);
+    remove = () => {
+      matchMedia.removeEventListener("change", updateTheme);
+    };
+
+    const themePreference = getThemePreference();
+    const isDark =
+      themePreference === "dark" ||
+      (themePreference === "system" && matchMedia.matches);
+    console.log(isDark);
+    updateIcon(themePreference);
+    document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+  };
+
+  updateTheme();
+
+  document.getElementById("theme-toggle-btn").addEventListener("click", (e) => {
+    e.stopPropagation();
+    const themePreference = getThemePreference();
+    localStorage.setItem(
+      "theme",
+      themePreference === "dark" ? "light" : "dark"
+    );
+    updateTheme();
+  });
+</script>

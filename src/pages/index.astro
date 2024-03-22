@@ -28,16 +28,19 @@ import { ViewTransitions } from "astro:transitions";
   >
     <Header />
     <div
-      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950
-      bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
-      dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-white dark:bg-gray-950
+      bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(226,226,226,100),rgba(225,230,238,100))]
+      dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(44,83,100,100),rgba(15,32,39,100))]"
     >
     </div>
-    <SectionContainer id="home" class="py-16 md:py-36 flex justify-center items-center">
+    <SectionContainer
+      id="home"
+      class="py-16 md:py-36 flex justify-center items-center"
+    >
       <AboutCard />
     </SectionContainer>
-    <div class="space-y-24 w-full">
-      <SectionContainer id="experiencia">
+    <div class="space-y-28 w-full">
+      <SectionContainer id="experiencia" >
         <h2
           class="pl-4 sm:pl-0 flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
         >
@@ -46,7 +49,7 @@ import { ViewTransitions } from "astro:transitions";
         </h2>
         <Experience />
       </SectionContainer>
-      <SectionContainer id="proyectos">
+      <SectionContainer id="proyectos" >
         <h2
           class="pl-4 sm:pl-0 flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
         >
