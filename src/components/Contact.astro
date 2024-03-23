@@ -56,7 +56,7 @@ import SendEmail from "../icons/SendEmail.astro";
         body: JSON.stringify({
           from: email.value,
           subject: asunto.value,
-          html: `<p>${mensaje.value}</p>`,
+          html: mensaje.value,
         }),
       });
 
