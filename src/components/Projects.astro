@@ -2,6 +2,8 @@
 import React from "../icons/React.astro";
 import Firebase from "../icons/Firebase.astro";
 import Flutter from "../icons/Flutter.astro";
+import Tailwind from "../icons/Tailwind.astro";
+
 import Link from "../icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
 
@@ -34,6 +36,11 @@ const TAGS = {
     class: "bg-black text-white",
     icon: Firebase,
   },
+  TAILWIND: {
+    name: "Tailwind",
+    class: "bg-black text-white",
+    icon: Tailwind,
+  },
 };
 const PROJECTS = [
   {
@@ -41,7 +48,6 @@ const PROJECTS = [
     description:
       "Aplicación que utilizan los trabajadores de Cerezo cada día. La función principal es tomar pedidos y poder imprimirlos utilizando una impresora térmica. Dentro de la aplicación se puede administrar los usuarios, los clientes y los productos.",
     link: "/cerezo",
-    // github: "https://github.com/pheralb/svgl",
     image: "/cerezo.webp",
     tags: [TAGS.FLUTTER, TAGS.FIREBASE],
   },
@@ -51,7 +57,7 @@ const PROJECTS = [
       "Plataforma en desarrollo para usuarios que quieran administrar sus condominios. Se pueden registrar propiedades, enviar notificaciones, crear bitácoras, crear reservaciones y administrar servicios.",
     link: "http://localhost:4321/#proyectos",
     image: "condo.webp",
-    tags: [TAGS.REACT, TAGS.FIREBASE],
+    tags: [TAGS.REACT, TAGS.FIREBASE, TAGS.TAILWIND],
   },
 ];
 ---

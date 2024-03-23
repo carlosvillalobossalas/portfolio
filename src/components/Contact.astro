@@ -2,7 +2,7 @@
 import SendEmail from "../icons/SendEmail.astro";
 ---
 
-<div class="relative mt-16 border-b border-white border-opacity-30">
+<div class="relative mt-16 border-b border-[#7e3636] dark:border-white border-opacity-30">
   <form
     id="emailForm"
     class="mx-6 pb-4 flex flex-col gap-y-5 items-start"
@@ -14,7 +14,7 @@ import SendEmail from "../icons/SendEmail.astro";
       name="email"
       type="email"
       placeholder="Email"
-      class="bg-white text-lg p-2 text-black rounded w-5/6 outline-none sm:w-3/4 lg:w-1/3"
+      class="bg-white text-lg p-2 text-black rounded w-5/6 outline-none sm:w-3/4 lg:w-1/3 border-black border dark:border-none"
       autocomplete="off"
     />
 
@@ -22,17 +22,17 @@ import SendEmail from "../icons/SendEmail.astro";
       type="text"
       id="asunto"
       placeholder="Asunto"
-      class="bg-white text-lg p-2 text-black rounded w-5/6 outline-none sm:w-3/4 lg:w-1/3"
+      class="bg-white text-lg p-2 text-black rounded w-5/6 outline-none sm:w-3/4 lg:w-1/3 border-black border dark:border-none"
       autocomplete="off"
     />
     <textarea
       placeholder="Mensaje"
       id="mensaje"
-      class="bg-white text-lg p-2 text-black rounded h-44 w-full outline-none lg:w-1/2"
+      class="bg-white text-lg p-2 text-black rounded h-44 w-full outline-none lg:w-1/2 border-black border dark:border-none resize-none"
     ></textarea>
     <button
       type="submit"
-      class="text-black text-lg bg-white px-3 py-1 rounded-full flex items-center gap-x-2"
+      class="text-black text-lg bg-white px-3 py-1 rounded-full flex items-center gap-x-2 border-black border dark:border-none"
       ><SendEmail />{" "}Enviar
     </button>
   </form>
@@ -47,9 +47,6 @@ import SendEmail from "../icons/SendEmail.astro";
       var email = document.getElementById("email") as HTMLInputElement;
       var asunto = document.getElementById("asunto") as HTMLInputElement;
       var mensaje = document.getElementById("mensaje") as HTMLInputElement;
-      console.log("Email:", email);
-      console.log("asunto:", asunto);
-      console.log("mensaje:", mensaje);
 
       await fetch("/api/sendEmail.json", {
         method: "POST",

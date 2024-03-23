@@ -1,11 +1,6 @@
 ---
-import ThemeToggle from './ThemeToggle.astro'
+import ThemeToggle from "./ThemeToggle.astro";
 const navItems = [
-  {
-    title: "Inicio",
-    label: "inicio",
-    url: "/#home",
-  },
   {
     title: "Experiencia",
     label: "experiencia",
@@ -21,11 +16,16 @@ const navItems = [
     label: "certificaciones",
     url: "/#certificaciones",
   },
+  {
+    title: "Contacto",
+    label: "contacto",
+    url: "/#contacto",
+  },
 ];
 ---
 
-<header class="sm:max-w-8xl flex items-center justify-center pt-3 ">
-  <nav class=" flex flex-row font-semibold gap-x-2 items-center">
+<header class="sm:max-w-8xl flex items-center justify-center pt-3">
+  <nav class="flex flex-row font-semibold gap-x-2 items-center">
     {
       navItems.map((item) => (
         <a
@@ -37,7 +37,7 @@ const navItems = [
         </a>
       ))
     }
-    <ThemeToggle/>
+    <ThemeToggle />
   </nav>
 </header>
 
@@ -52,11 +52,9 @@ const navItems = [
             if (item.getAttribute("aria-label") == entry.target.id) {
               item.classList.add("dark:text-yellow-500");
               item.classList.add("text-[#841818]");
-
             } else {
               item.classList.remove("dark:text-yellow-500");
               item.classList.remove("text-[#841818]");
-
             }
           });
         }
