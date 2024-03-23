@@ -13,8 +13,8 @@ const navItems = [
   },
   {
     title: "Certificaciones",
-    label: "certificaciones",
-    url: "/#certificaciones",
+    label: "cert",
+    url: "/#cert",
   },
   {
     title: "Contacto",
@@ -25,7 +25,7 @@ const navItems = [
 ---
 
 <header class="sm:max-w-8xl flex items-center justify-center pt-3">
-  <nav class="flex flex-row font-semibold gap-x-2 items-center">
+  <nav class="flex flex-row font-semibold gap-x-1 sm:gap-x-2 items-center">
     {
       navItems.map((item) => (
         <a
@@ -103,7 +103,7 @@ const navItems = [
   @keyframes adjust-header {
     to {
       background: rgba(179, 177, 210, 0.5);
-      font-size: 12px;
+      font-size: 11px;
       height: 40px;
       z-index: 99;
       top: 10px;
