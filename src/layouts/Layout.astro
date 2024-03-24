@@ -2,20 +2,13 @@
 import "@fontsource-variable/onest";
 
 import Header from "../components/Header.astro";
-
-import { ViewTransitions } from "astro:transitions";
+import Head from "../components/Head.astro";
 const { title, description } = Astro.props;
 ---
 
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-    <ViewTransitions />
+    <Head title={title} description={description} />
   </head>
 
   <body
