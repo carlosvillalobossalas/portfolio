@@ -3,6 +3,9 @@ import React from "../icons/React.astro";
 import Firebase from "../icons/Firebase.astro";
 import Flutter from "../icons/Flutter.astro";
 import Tailwind from "../icons/Tailwind.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 import Link from "../icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
@@ -45,8 +48,7 @@ const TAGS = {
 const PROJECTS = [
   {
     title: "Cerezo",
-    description:
-      "Aplicación que utilizan los trabajadores de Cerezo cada día. La función principal es tomar pedidos y poder imprimirlos utilizando una impresora térmica. Dentro de la aplicación se puede administrar los usuarios, los clientes y los productos.",
+    description: t("projects.cerezo.description"),
     link: "/cerezo",
     image: "/cerezo.webp",
     tags: [TAGS.FLUTTER, TAGS.FIREBASE],
@@ -54,7 +56,7 @@ const PROJECTS = [
   {
     title: "Condo Dashboard",
     description:
-      "Plataforma en desarrollo para usuarios que quieran administrar sus condominios. Se pueden registrar propiedades, enviar notificaciones, crear bitácoras, crear reservaciones y administrar servicios.",
+      t('projects.condo.description'),
     link: "http://localhost:4321/#proyectos",
     image: "condo.webp",
     tags: [TAGS.REACT, TAGS.FIREBASE, TAGS.TAILWIND],

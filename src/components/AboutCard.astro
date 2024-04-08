@@ -3,19 +3,23 @@ import LinkedInIcon from "../icons/LinkedIn.astro";
 import GithubIcon from "../icons/Github.astro";
 import SocialPill from "./SocialPill.astro";
 import avatar from "../images/avatar.jpg";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+
+const t = useTranslations(lang);
 ---
 
-<div class=" flex flex-col items-center max-w-3xl">
+<div class="flex flex-col items-center max-w-3xl">
   <img
     src={avatar.src}
     alt={"Mi avatar"}
     class={` w-36 h-36 sm:w-48 sm:h-48 rounded-lg object-cover mt-2`}
   />
   <h1 class="text-3xl font-semibold mt-2 sm:mt-5">Carlos Villalobos</h1>
-  <h2 class="text-xl font-semibold">Software Developer</h2>
-  <p class="w-4/5 text-left text-lg pt-2 xl:pt-5 text-pretty ">
-    Et Lorem dolor cillum culpa ex voluptate excepteur mollit. Id in occaecat
-    ipsum veniam culpa dolore. Id cupidatat dolore qui do duis consectetur amet.
+  <h2 class="text-xl font-semibold">{t("about.role")}</h2>
+  <p class="w-4/5 text-left text-lg pt-2 xl:pt-5 text-pretty">
+   {t('about.description')}
   </p>
   <nav class="flex gap-x-5 my-5">
     <SocialPill href="https://www.linkedin.com/in/carlos-villalobos-salas/">
@@ -27,7 +31,6 @@ import avatar from "../images/avatar.jpg";
       Github
     </SocialPill>
   </nav>
-  
 </div>
 
 <style>

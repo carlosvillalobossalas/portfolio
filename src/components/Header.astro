@@ -1,25 +1,30 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro";
+import { languages } from "../i18n/ui";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const navItems = [
   {
-    title: "Experiencia",
-    label: "experiencia",
-    url: "/#experiencia",
+    title: t("nav.experience"),
+    label: "experience",
+    url: `/${lang}/#experiencie`,
   },
   {
-    title: "Proyectos",
-    label: "proyectos",
-    url: "/#proyectos",
+    title: t("nav.projects"),
+    label: "projects",
+    url: `/${lang}/#projects`,
   },
   {
-    title: "Certificaciones",
-    label: "cert",
-    url: "/#cert",
+    title: t("nav.certifications"),
+    label: "certifications",
+    url: `/${lang}#certifications`,
   },
   {
-    title: "Contacto",
-    label: "contacto",
-    url: "/#contacto",
+    title: t("nav.contact"),
+    label: "contact",
+    url: `/${lang}#contact`,
   },
 ];
 ---
@@ -37,6 +42,13 @@ const navItems = [
         </a>
       ))
     }
+    <!-- {
+      Object.entries(languages).map(([lang, label]) => (
+        <li>
+          <a href={`/${lang}/`}>{label}</a>
+        </li>
+      ))
+    } -->
     <ThemeToggle />
   </nav>
 </header>

@@ -1,21 +1,20 @@
 ---
-import AboutCard from "../components/AboutCard.astro";
-import BriefcaseIcon from "../icons/Briefcase.astro";
-import CodeIcon from "../icons/Code.astro";
-import Mail from "../icons/Mail.astro";
-import SectionContainer from "../components/SectionContainer.astro";
-import Experience from "../components/Experience.astro";
-import Projects from "../components/Projects.astro";
-import Certifications from "../components/Certifications.astro";
-import Contact from "../components/Contact.astro";
-
-import Layout from "../layouts/Layout.astro";
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import AboutCard from "../../components/AboutCard.astro";
+import BriefcaseIcon from "../../icons/Briefcase.astro";
+import CodeIcon from "../../icons/Code.astro";
+import Mail from "../../icons/Mail.astro";
+import SectionContainer from "../../components/SectionContainer.astro";
+import Experience from "../../components/Experience.astro";
+import Projects from "../../components/Projects.astro";
+import Certifications from "../../components/Certifications.astro";
+import Contact from "../../components/Contact.astro";
+import Layout from "../../layouts/Layout.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<Layout title="Carlos Villalobos" description="Porftolio">
+<Layout title="Carlos Villalobos" description="Mi portafolio">
   <main>
     <SectionContainer
       id="home"

@@ -7,7 +7,9 @@ import Java from "../icons/Java.astro";
 import Spring from "../icons/Spring.astro";
 import PostgreSQL from "../icons/PostgreSQL.astro";
 import MySQL from "../icons/MySQL.astro";
-
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const TAGS = {
   REACT: {
     name: "React",
@@ -48,26 +50,26 @@ const TAGS = {
 const EXPERIENCIE = [
   {
     date: "11/2022 - 02/2024",
-    title: "Full Stack Developer",
+    title: t("experiencie.fullstack"),
     company: "Fresh Consulting",
     description:
-      "Encargado de resolver tickets en Jira para solucionar errores y agregar o eliminar funcionalidades en las diferentes plataformas del cliente.",
+      t('experiencie.fresh.description'),
     tags: [TAGS.REACT, TAGS.NODE, TAGS.EXPRESS, TAGS.POSTGRESQL],
   },
   {
     date: "02/2022 - 10/2022",
-    title: "Full Stack Developer",
+    title: t("experiencie.fullstack"),
     company: "First Factory",
     description:
-      "Responsable de cumplir con la entrega de tickets para mejorar y expandir el funcionamiento de las diferentes aplicaciones web del cliente.",
+      t('experience.ff.description'),
     tags: [TAGS.REACT, TAGS.JAVA, TAGS.SPRING, TAGS.POSTGRESQL],
   },
   {
     date: "07/2021 - 02/2022",
-    title: "Full Stack Developer",
+    title: t("experiencie.fullstack"),
     company: "SOIN",
     description:
-      "Creación de un sistema web completo para el departamento de QA. Se incluyeron funcionalidades como creación de reportes diarios, ejecución de métricas, administración de usuarios y encuestas",
+      t('experiencie.soin.description'),
     tags: [TAGS.REACT, TAGS.NODE, TAGS.EXPRESS, TAGS.MYSQL],
   },
 ];

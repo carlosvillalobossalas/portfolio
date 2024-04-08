@@ -3,10 +3,13 @@ import "@fontsource-variable/onest";
 
 import Header from "../components/Header.astro";
 import Head from "../components/Head.astro";
+import { getLangFromUrl } from "../i18n/utils";
 const { title, description } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
 ---
 
-<html lang="en">
+<html lang={lang}>
   <head>
     <Head title={title} description={description} />
   </head>
