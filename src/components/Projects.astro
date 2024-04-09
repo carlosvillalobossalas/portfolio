@@ -55,8 +55,7 @@ const PROJECTS = [
   },
   {
     title: "Condo Dashboard",
-    description:
-      t('projects.condo.description'),
+    description: t("projects.condo.description"),
     link: "http://localhost:4321/#proyectos",
     image: "condo.webp",
     tags: [TAGS.REACT, TAGS.FIREBASE, TAGS.TAILWIND],
@@ -100,13 +99,16 @@ const PROJECTS = [
             <div class="mt-2 text-gray-700 dark:text-gray-400 text-pretty">
               {description}
             </div>
+
             <footer class="flex items-end justify-start mt-4 gap-x-4">
-              {link && (
-                <LinkButton href={link}>
-                  <Link class="size-4" />
-                  Preview
-                </LinkButton>
-              )}
+              {
+                //   link && (
+                //   <LinkButton href={link}>
+                //     <Link class="size-4" />
+                //     Preview
+                //   </LinkButton>
+                // )
+              }
             </footer>
           </div>
         </div>
