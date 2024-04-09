@@ -1,6 +1,9 @@
 ---
 const { title, description, website, credential, tags } = Astro.props;
 import LinkInline from "./LinkInline.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <article
@@ -31,7 +34,7 @@ import LinkInline from "./LinkInline.astro";
     {
       credential && (
         <LinkInline href={credential}>
-          Ver credencial{" "}
+          {t("certifications.see.credential")}{" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="w-5 icon icon-tabler icon-tabler-chevron-right"
