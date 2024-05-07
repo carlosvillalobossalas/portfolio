@@ -18,12 +18,21 @@ export const ui = {
     //!Experience
     "experiencie.container.title": "Professional experience",
     "experiencie.fullstack": "Full Stack Developer",
-    "experiencie.fresh.description":
-      "In charge of resolving tickets in Jira to solve errors and add or remove functionalities on the client's different platforms",
-    "experience.ff.description":
-      "Responsible for complying with the delivery of tickets to improve and expand the operation of the client's different web applications.",
-    "experiencie.soin.description":
-      "Creation of a complete web system for the QA department. Features such as daily reporting, metrics execution, user management and surveys were included.",
+    "experiencie.fresh.description": `Worked fixing bugs and adding new features in Starlight’s live
+      dispatch and tracking software created with React, Node and
+      PostgreSQL. This software allows operators to take orders,
+      route, dispatch, invoice customers, receive and report all in one
+      cloud-based solution`,
+    "experience.ff.description": `Responsible for maintaining constant improvement in Ro
+      Capital’s real estate software. Financial Services Platform for
+      Residential Real Estate Investors developed with React, Java
+      and PostgreSQL.
+      `,
+    "experiencie.soin.description": `Performed a migration from a desktop application built with
+      Java to a web application made with React and Node. This
+      application was for the QA team and it allows to create daily
+      reports, manage users, execute metrics and answer survey
+      questions.`,
     //!Projects
     "projects.container.title": "Projects",
     "projects.cerezo.description":
