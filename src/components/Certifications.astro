@@ -13,6 +13,7 @@ import Node from "../icons/Node.astro";
 import Redux from "../icons/Redux.astro";
 import Express from "../icons/Express.astro";
 import Jest from "../icons/Jest.astro";
+import AWS from "../icons/AWS.astro";
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
@@ -83,8 +84,23 @@ const TAGS = {
     class: "bg-black text-white",
     icon: Jest,
   },
+  AWS: {
+    name: "Amazon Web Services",
+    class: "bg-black text-white",
+    icon: AWS,
+  },
 };
+//TODO:  pasar a i18n
 const CERTIFICATIONS = [
+  {
+    title: "Cloud Practitioner Certification",
+    website: TAGS.AWS,
+    description:
+      "Earners of this certification have a fundamental understanding of IT services and their uses in the AWS Cloud. They demonstrated cloud fluency and foundational AWS knowledge. Badge owners are able to identify essential AWS services necessary to set up AWS-focused projects.",
+    credential:
+      "https://www.credly.com/badges/71fcd93a-11f7-47d3-8c25-bdeb0a356cab/linked_in_profile",
+    tags: [TAGS.AWS],
+  },
   {
     title: t("certifications.openai.title"),
     website: TAGS.UDEMY,
